@@ -1,0 +1,35 @@
+int soundSensor=2;
+int LED=13;
+int LED2=12;
+int LED3=11;
+
+boolean LEDStatus=false;
+
+void setup() {
+ pinMode(soundSensor,INPUT);
+ pinMode(LED,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(LED3,OUTPUT);
+
+}
+
+void loop() {
+
+  int SensorData=digitalRead(soundSensor); 
+  if(SensorData==1){
+
+    if(LEDStatus==false){
+        LEDStatus=true;
+        digitalWrite(LED,HIGH);
+        digitalWrite(LED2,HIGH);
+          digitalWrite(LED3,HIGH);
+        
+    }
+    else{
+        LEDStatus=false;
+        digitalWrite(LED,LOW);
+        digitalWrite(LED2,LOW);
+         digitalWrite(LED3,LOW);
+    }
+  }
+ }
